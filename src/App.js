@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Like from "./pages/Like";
 import Bookmark from "./pages/Bookmark";
-// import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import { RootElement } from "./components/rootelement/RootElement";
 import OurMock from "./pages/OurMock";
