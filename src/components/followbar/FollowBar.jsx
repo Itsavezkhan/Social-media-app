@@ -52,7 +52,7 @@ const FollowBar = () => {
             key={"rate"}
           >
             <p className="text-gray-600 md:text-lg font-semibold">
-              No User Found
+              No More Suggestions
             </p>
           </div>
         ) : (

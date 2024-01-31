@@ -15,10 +15,10 @@ const Profile = () => {
   const { allposts } = useSelector((state) => state.post);
   const [profilemodal, setProfileModal] = useState(false);
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false)
-  
+  const [loading, setLoading] = useState(false);
+
   const { followers, following } = profiledata;
-  
+
   //STATE
   const { foundUser, encodedToken } = useSelector(
     (state) => state.autho.authoobject
@@ -27,7 +27,7 @@ const Profile = () => {
     (follow) => follow?._id === foundUser?._id
   );
   //VARIABLES
-  const isUser = profiledata?.username === foundUser?.username
+  const isUser = profiledata?.username === foundUser?.username;
 
   const count = allposts?.filter(
     (post) => post?.username === profiledata?.username
@@ -47,18 +47,21 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setProfileData(
       allusersdata?.find((user) => user?._id === profileid?.profile)
     );
-    setLoading(false)
-  }, [ profiledata, profileid, allusersdata]);
+    setLoading(false);
+  }, [profiledata, profileid, allusersdata]);
 
   return (
     <>
-      <div className="pt-2">
+      <div className="pt-2 px-1">
         {profilemodal ? (
-          <Modal profilemodal={profilemodal} setProfileModal={setProfileModal}/>
+          <Modal
+            profilemodal={profilemodal}
+            setProfileModal={setProfileModal}
+          />
         ) : (
           <div className="">
             <div className="bg-white p-4 flex rounded-lg justify-between">
@@ -80,17 +83,19 @@ const Profile = () => {
                         onClick={() =>
                           FollowUnfollowUser(profiledata._id, encodedToken)
                         }
-                        className="cursor-pointer text-white bg-blue-400 rounded-full py-1 px-2 hover:opacity-80 ml-2"
+                        className="cursor-pointer text-white bg-blue-400 rounded-full py-1 px-2 hover:opacity-80 ml-2 hover:bg-blue-600"
                       >
                         {isFollow ? "Unfollow" : "Follow"}
                       </button>
                     )}
-                    {isUser && <button
-                      className="px-2 py-1 text-black border border-gray-400 rounded-full hover:bg-gray-200 ml-20 font-semibold"
-                      onClick={() => setProfileModal(!profilemodal)}
-                    >
-                      Edit
-                    </button>}
+                    {isUser && (
+                      <button
+                        className="px-2 py-1 text-black border border-gray-400 rounded-full hover:bg-gray-200 ml-20 font-semibold"
+                        onClick={() => setProfileModal(!profilemodal)}
+                      >
+                        Edit
+                      </button>
+                    )}
                   </div>
                   <p className="text-sm text-gray-400 cursor-pointer">
                     @{profiledata?.userHandler}
@@ -116,9 +121,9 @@ const Profile = () => {
           </div>
         )}
         <div className="mt-2">
-          {loading ? <p className="bg-red-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure dignissimos, quos harum laboriosam aliquid ipsum reprehenderit necessitatibus praesentium autem omnis placeat eum adipisci blanditiis id qui dicta similique error delectus.</p> : (userposts?.map((post) => (
+          {userposts?.map((post) => (
             <SinglePost post={post} key={post._id} />
-          )))}
+          ))}
         </div>
       </div>
     </>

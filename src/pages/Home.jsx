@@ -73,7 +73,7 @@ const Home = () => {
     (post) => post.username !== foundUser.username
   );
 
-  const ourhomedata = homeswitch === "False" ? feeddata : TrendingData;
+  const ourhomedata = homeswitch  ? TrendingData : feeddata;
 
   return (
     <>

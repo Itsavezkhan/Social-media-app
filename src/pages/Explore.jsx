@@ -7,7 +7,7 @@ const Explore = () => {
   const {allposts} = useSelector((state) => state.post)
 
   return (
-    <div className='pt-2'>
+    <div className='pt-2 px-1'>
       {allposts?.map((post) => <SinglePost post={post} key={post._id}/>)}
     </div>
   )

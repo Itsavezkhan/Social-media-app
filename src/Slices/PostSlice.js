@@ -125,7 +125,7 @@ const postSlice = createSlice({
     allposts: [],
     userposts: [],
     myBookmarks: [],
-    homeswitch: "False",
+    homeswitch: false,
   },
   reducers: {
     togglehomeswitch: (state, action) => {

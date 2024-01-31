@@ -30,7 +30,7 @@ const Search = () => {
 
   return (
     <>
-      <div className="bg-white rounded-lg p-1 flex items-center gap-1 z-">
+      <div className="bg-white rounded-lg p-1 flex items-center gap-1">
         <SearchIcon />
         <input
           type="text"

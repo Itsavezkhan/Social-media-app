@@ -17,10 +17,10 @@ const Like = () => {
         )
       )
     );
-  }, []);
+  }, [allposts]);
   return (
     <>
-      <div className="mt-2 flex flex-col items-center">
+      <div className="mt-2 flex flex-col items-center px-1">
         {likeddata.length > 0 ? likeddata?.map((post) => (
           <SinglePost post={post} key={post._id}/>
         )) : <h2 className="font-bold text-2xl text-stone-600">No Liked tweet Yet</h2>}

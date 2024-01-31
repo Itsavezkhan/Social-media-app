@@ -13,6 +13,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const getLoginUser = () => {
+    setEmail("Avez1234@gmail.com")
+    setPassw("*************")
     setTimeout(() => {
       const res = dispatch(GetAuthUserLoginCreator());
       res.then((res) => navigate("/"));
@@ -20,6 +22,7 @@ const Login = () => {
     toast.success("Loggin In", {
       toastId: "success",
     });
+    
   };
 
   return (
@@ -31,30 +34,30 @@ const Login = () => {
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <div className="bg-blue-500 flex flex-col justify-center items-center md:w-3/5 p-2 md:p-7 h-80 md:h-96 rounded-2xl gap-2">
             <h2 className="text-slate-100 font-bold tracking-wider text-xl md:text-2xl mb-2 md:mb-4">
-              Welcome to Connexa
+              Welcome to <span className="text-orange-300 font-bold text-3xl">Connexa</span>
             </h2>
             <div className="w-full">
               <label className="text-slate-100 font-bold tracking-wider">
-                Username :
+                Username 
               </label>
               <input
                 type="text"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter username"
                 onChange={(e) => setEmail(e.target.value)}
-                className="p-1 outline-none rounded-full w-full"
+                className="py-1 px-4 outline-none rounded-full w-full text-sm text-gray-500 font-lg"
               />
             </div>
             <div className="w-full">
               <label className="text-slate-100 font-bold tracking-wider">
-                Password :
+                Password 
               </label>
               <input
                 type="text"
                 value={passw}
                 placeholder="Enter password"
                 onChange={(e) => setPassw(e.target.value)}
-                className="p-1 outline-none rounded-full w-full"
+                className="py-1 px-4 outline-none rounded-full w-full text-sm text-gray-500 font-lg"
               />
             </div>
             <button

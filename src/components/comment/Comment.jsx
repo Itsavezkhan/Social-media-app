@@ -65,7 +65,8 @@ const Comment = ({ comment, postid }) => {
                     type="text"
                     value={initialcomment}
                     onChange={(e) => setInitialComment(e.target.value)}
-                    className="focus:outline-none border-b-2 border-gray-400 bg-slate px-1 w-full text-sm h-auto"
+                    placeholder="Enter your comment"
+                    className="focus:outline-none border-b-2 border-gray-400 bg-slate px-3 w-full text-sm h-auto rounded-full"
                   />
                   <div className="flex gap-1 ">
                     <span
@@ -73,7 +74,8 @@ const Comment = ({ comment, postid }) => {
                         setIsEditComment(false);
                         setEditModal(false);
                       }}
-                      className="hover:cursor-pointer hover:text-red-600"
+                      className="hover:cursor-pointer hover:bg-gray-400 rounded-full"
+                      
                     >
                       <DeleteIcon />
                     </span>
@@ -86,9 +88,9 @@ const Comment = ({ comment, postid }) => {
                           encodedToken
                         )
                       }
-                      className="hover:cursor-pointer hover:text-green-800"
+                      className="hover:cursor-pointer hover:bg-gray-400 rounded-full"
                     >
-                      <DoneIcon />
+                      <DoneIcon/>
                     </span>
                   </div>
                 </div>
@@ -99,8 +101,8 @@ const Comment = ({ comment, postid }) => {
           </div>
         </div>
         {isUser && (
-          <div onClick={() => setEditModal(!editmodal)}>
-            <MoreVertIcon />
+          <div onClick={() => setEditModal(!editmodal)} className="hover:bg-gray-300 rounded-full">
+            <MoreVertIcon className="hover:text-blue-600" />
           </div>
         )}
 
