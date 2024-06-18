@@ -23,7 +23,9 @@ import { useNavigate } from "react-router-dom";
 import { LikeDislikePostsCreator } from "../../Slices/PostSlice";
 import { useRef } from "react";
 
-const SinglePost = ({ post, postquery, postdataobj }) => {
+const SinglePost = ({ post}) => { 
+  // , postquery, postdataobj 
+  // taking them as props 
   const { allusersdata } = useSelector((state) => state.user);
   const { foundUser, encodedToken } = useSelector(
     (state) => state.autho.authoobject
@@ -37,14 +39,14 @@ const SinglePost = ({ post, postquery, postdataobj }) => {
   const [initialpost, setInitialPost] = useState({
     content: post?.content,
   });
-
   const { likes } = post;
   const { likeCount } = likes;
 
   const editref = useRef();
 
   useEffect(()=> {
-    document,addEventListener('click', HandleClick)
+    document.addEventListener('click', HandleClick)
+    // changed ,to.
   },[])
 
   const HandleClick = (e) => {
@@ -147,12 +149,17 @@ const SinglePost = ({ post, postquery, postdataobj }) => {
                 className="hover:bg-gray-300 flex items-center justify-center rounded-full w-7 h-7 relative"
                 onClick={(e) => {
                   setEditModal(!editmodal);
-                  if (!editref.current.contains(e.target)) {
-                    setEditModal(false);
-                  }
+                  //Alwasy will be false if console editmodal cuz no reference
+                  // if (!editref.current.contains(e.target)){
+                  //   setEditModal(false);
+                  // }
+                  // console.log(e)
                 }}
               >
-                <MoreVertIcon  ref={editref}className="hover:text-blue-600" />
+                <MoreVertIcon
+                 ref={editref}
+                //  used for reference if not then more icon doesnt work
+                className="hover:text-blue-600" />
 
                 {editmodal && (
                   <div className="bg-gray-300 absolute top-10 flex flex-col p-1 right-1 rounded-lg">

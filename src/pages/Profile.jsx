@@ -9,7 +9,7 @@ import { updateuser } from "../Slices/AuthSlice";
 import Modal from "../components/modal/Modal";
 
 const Profile = () => {
-  const profileid = useParams();
+  const profileid = useParams();//Returning an obj with profile prop
   const [profiledata, setProfileData] = useState({});
   const { allusersdata } = useSelector((state) => state.user);
   const { allposts } = useSelector((state) => state.post);
@@ -52,7 +52,7 @@ const Profile = () => {
       allusersdata?.find((user) => user?._id === profileid?.profile)
     );
     setLoading(false);
-  }, [profiledata, profileid, allusersdata]);
+  }, [profileid, profiledata, allusersdata]);
 
   return (
     <>

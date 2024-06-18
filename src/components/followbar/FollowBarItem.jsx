@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const FollowBarItem = ({user, FollowUnfollowFunc, encodedToken}) => {
+const FollowBarItem = ({user, BetterFollow, encodedToken}) => {
     const navigate = useNavigate();
+    
   return (
     <>
       <div
@@ -26,7 +27,7 @@ const FollowBarItem = ({user, FollowUnfollowFunc, encodedToken}) => {
               <div className="xl:w-2/5 ">
                 <button
                   className="cursor-pointer text-white bg-blue-400 rounded-full py-1 px-2 hover:bg-blue-500 ml-2 text-sm"
-                  onClick={() => FollowUnfollowFunc(user?._id, encodedToken)}
+                  onClick={() => BetterFollow(user?._id, encodedToken)}
                 >
                   + Follow
                 </button>

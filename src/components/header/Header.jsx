@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
-// import Menubar from "../Menubar";
 import Menubar from "../menubar/Menubar";
 
 const Header = () => {

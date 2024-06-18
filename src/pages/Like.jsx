@@ -13,11 +13,13 @@ const Like = () => {
     setLikedData(
       allposts?.filter((post) =>
         post?.likes?.likedBy?.some(
+          // filter ke andar sum 
           (post2) => post2?.username === foundUser?.username
         )
       )
     );
   }, [allposts]);
+  //Weather you use find or some it will do the work 
   return (
     <>
       <div className="mt-2 flex flex-col items-center px-1">

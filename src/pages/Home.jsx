@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddUserPostCreator, updateallposts } from "../Slices/PostSlice";
-import { getallusers } from "../Slices/UserSlice";
-import { getAllposts } from "../Slices/PostSlice";
+// import { getallusers } from "../Slices/UserSlice";
+// import { getAllposts } from "../Slices/PostSlice";
 import { getAllPostsCreater } from "../Slices/PostSlice";
 import { getAuthUserService } from "../Slices/AuthSlice";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -37,7 +37,7 @@ const Home = () => {
         ?.filter(
           (post) =>
             post?.username === foundUser.username ||
-            foundUser?.following?.find(
+            foundUser?.following?.find( //iterative method, undefined, doesn't change existing arrray, execute function for each elemt
               (ele) => ele?.username === post?.username
             )
         )

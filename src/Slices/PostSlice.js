@@ -37,6 +37,7 @@ export const LikeDislikePostsCreator = createAsyncThunk(
     }
   }
 );
+
 export const MarkunmarkPostCreator = createAsyncThunk(
   "post/MarkUnmarkPostsCreator",
   async ({ postid, token, isBookMarked }) => {
@@ -50,6 +51,7 @@ export const MarkunmarkPostCreator = createAsyncThunk(
     }
   }
 );
+
 export const EditUserPostCreator = createAsyncThunk(
   "post/EditUserPost",
   async ({ postid, postData, token }) => {

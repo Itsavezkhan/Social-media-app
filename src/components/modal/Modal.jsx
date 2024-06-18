@@ -60,7 +60,9 @@ const Modal = ({ profilemodal, setProfileModal }) => {
               className="opacity-0 w-20 cursor-pointer z-20 absolute top-3 md:top-6"
               accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/jpg,image/webp"
               type="file"
-              onChange={(e) => updateProfileImageHandler(e.target.files[0])}
+              onChange={(e) => {
+                updateProfileImageHandler(e.target.files[0])
+              }}
             />
             <div className="absolute bottom-2 md:bottom-5 right-2 md:right-4 ">
               <AddIcon className="text-black" />
@@ -104,7 +106,7 @@ const Modal = ({ profilemodal, setProfileModal }) => {
               {loading ? "Updating" : "Update"}
             </button>
             <button
-             className="text-white bg-blue-400 rounded-full text-sm font-semibold hover:bg-blue-500 py-1"
+              className="text-white bg-blue-400 rounded-full text-sm font-semibold hover:bg-blue-500 py-1"
               onClick={() => setProfileModal(!profilemodal)}
             >
               Back
